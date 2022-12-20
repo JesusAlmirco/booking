@@ -37,7 +37,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     last_name = models.CharField(('Last name'), max_length=30)
     description = models.TextField('Description', default="", blank=True)
     # image = models.ImageField(upload_to='images', verbose_name='Profile picture', null=True, blank=True)
-    images = CloudinaryField('profile_image')
+    images = CloudinaryField('profile_image', null=True, blank=True)
 
     is_staff = models.BooleanField(
         ('staff status'),
