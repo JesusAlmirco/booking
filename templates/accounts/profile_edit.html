@@ -1,0 +1,39 @@
+{% extends "base.html" %} 
+{% load widget_tweaks %} 
+{% block content %}
+
+<div class="card card-profile my-5 mx-auto">
+  <div class="card-body">
+    <h5 class="card-title text-center">Edit profile</h5>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <table class="profile_table mb-4">
+        <tbody>
+          <tr>
+            <th class="header">profile picture</th>
+            <td class="data">{{ form.image }}</td>
+          </tr>
+          <tr>
+            <th class="header">Full name</th>
+            <td class="data form_wrap form_wrap-2">
+              {% render_field form.first_name class="form-control" placeholder="Name" %} {% render_field form.last_name class="form-control" placeholder="Last name" %}
+            </td>
+          </tr>
+          <tr>
+            <th class="header">Description</th>
+            <td class="data">
+              {% render_field form.description class="form-control" placeholder="Description" %}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="button mx-auto">
+        <button class="btn btn-lg btn-warning btn-block" type="submit">
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

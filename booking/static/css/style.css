@@ -147,14 +147,14 @@ main {
   padding: 16px 24px;
 }
 
-.form_wrap {
+/* .form_wrap {
   display: grid;
   gap: 16px;
 }
 
 .form_wrap__2col {
   grid-template-columns: repeat(2, 1fr);
-}
+} */
 
 /* mypage */
 
