@@ -20,6 +20,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     
-    path('accounts/', include('accounts.urls')), #local app urls
+    path('', include('core.urls')), #core app urls
+    path('accounts/', include('accounts.urls')), #accounts app urls
+    
     path('accounts/', include('allauth.urls')), # django-allauth urls
 ]
