@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    {% for store in store_data %}
+        <div class="col-lg-3 col-md-6">
+            <div class="card img-thumbnail storelist mb-3">
+                <img class="card-img-top card-thum" src="/{{ store.image.url }}" alt="">
+                <div class="card-body text-center px-2 py-3">
+                    <h5 class="font-weight-bold">{{ store.name }}</h5>
+                    <p>{{ store.address }}</p>
+                </div>
+                <a class="stretched-link" href="{% url 'staff' store.pk %}"></a>
+            </div>
+        </div>
+    {% empty %}
+        <p>No stores yet</p>
+    {% endfor %}
+</div>
+{% endblock %}
